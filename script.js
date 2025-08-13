@@ -14,4 +14,7 @@ class ProductProperties{
     toString(){
         return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}`;
     }
+
 }
+
+const product1 = new ProductProperties("Apple", 1.00, 5);
