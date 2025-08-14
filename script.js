@@ -14,6 +14,13 @@ class ProductProperties{
     toString(){
         return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}`;
     }
+     static applyDiscount(products, discount) {
+        // products → Product və ya PerishableProduct obyektlərindən ibarət array
+        // discount → məsələn, 0.15 → 15% endirim
+        for (let product of products) {
+            product.price = product.price - (product.price * discount);
+        }
+    }
 
 }
 
@@ -72,43 +79,21 @@ console.log("Part2 ended:");
 //Part 3
 console.log("Part 3 Started");
 
-class ProductProperties {
-    constructor(name, price, quantity) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-    }
+// ===== Test Part 3 =====
+const apple = new ProductProperties("Apple", 2.5, 50);
+const orange = new PerishableProductProperties("Orange", 1.5, 10, "2024-12-31");
+const pear = new PerishableProductProperties("Pear", 4.0, 5, "2024-11-15");
 
-    getTotalValue(){
-        return this.price * this.quantity;
-    }
+// ===== Test Part 3 =====
 
-    toString(){
-        return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
-    }
+const productsList = [apple, orange, pear];
 
-    static applyDiscount(products, discount){
-        for (let product of products){
-            product.price = product.price * (1 - discount);
-        }
-    }
-}
-
-class PerishableProductProperties extends ProductProperties {
-    constructor(name, price, quantity, expirationDate) {
-        super(name, price, quantity);
-        this.expirationDate = expirationDate;
-    }
-    toString(){
-        return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity:${this.quantity}, Expiration Date: ${this.expirationDate}`;
-        
-    }
-}
+console.log("💰 Prices before discount:");
+productsList.forEach(p => console.log(p.toString()));
 
 
-const apple = new ProductProperties("Apple", 1.5, 10);
-const banana = new ProductProperties("Banana", 0.5, 20, "2025-1-23");
-const orange = new ProductProperties("Orange", 1.0, 15, "2024-10-20");
-console.log(apple.toString());
-console.log(banana.toString());
-console.log(orange.toString());
+ProductProperties.applyDiscount(productsList, 0.15);
+
+console.log("\n💰 Prices after discount:");
+productsList.forEach(p => console.log(p.toString()));
+
