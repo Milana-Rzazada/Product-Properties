@@ -140,4 +140,4 @@ loadInventory();
 
 inventory.forEach(item => console.log(item.toString()));
 
-console.log("Part 4 Ended")
+console.log("Part 4 ENDED!")
