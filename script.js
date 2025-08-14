@@ -193,3 +193,4 @@ removeProductByName("Cheese");
 
 displayInventory();
 
+console.log("Part 5 ended.");
