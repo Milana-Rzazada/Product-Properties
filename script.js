@@ -97,3 +97,4 @@ ProductProperties.applyDiscount(productsList, 0.15);
 console.log("\n💰 Prices after discount:");
 productsList.forEach(p => console.log(p.toString()));
 
+console.log("Part 3 ended");
