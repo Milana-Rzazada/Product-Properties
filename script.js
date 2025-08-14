@@ -144,3 +144,14 @@ console.log("Part 4 ENDED!");
 
 //Part 5
 console.log("Part 5 Started");
+
+console.log("=== Part 5 Started ===");
+
+// Add a new product
+function addProduct(product) {
+    inventory.push(product);
+    saveInventory();
+    console.log(`Product added: ${product.toString()}`);
+}
+
+
