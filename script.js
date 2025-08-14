@@ -65,5 +65,5 @@ console.log(milk.toString());
 console.log(cheese.toString());
 console.log(yogurt.toString());
 console.log(eggs.toString());
-
+console.log("Part2 ended:");
 //Part 2 ended
