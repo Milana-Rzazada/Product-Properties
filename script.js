@@ -154,4 +154,14 @@ function addProduct(product) {
     console.log(`Product added: ${product.toString()}`);
 }
 
-
+//Remove
+function removeProductByName(name) {
+    const index = inventory.findIndex(item => item.name === name);
+    if (index !== -1) {
+        console.log(`🗑 Removing: ${inventory[index].toString()}`);
+        inventory.splice(index, 1);
+        saveInventory();
+    } else {
+        console.log(`Product not found: ${name}`);
+    }
+}
