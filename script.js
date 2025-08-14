@@ -73,5 +73,10 @@ console.log("Part2 ended:");
 console.log("Part 3 Started");
 
 class ProductProperties {
+    constructor(name, price, quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
     
 }
