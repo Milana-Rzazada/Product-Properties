@@ -88,13 +88,13 @@ const pear = new PerishableProductProperties("Pear", 4.0, 5, "2024-11-15");
 
 const productsList = [apple, orange, pear];
 
-console.log("💰 Prices before discount:");
+console.log("Prices before discount:");
 productsList.forEach(p => console.log(p.toString()));
 
 
 ProductProperties.applyDiscount(productsList, 0.15);
 
-console.log("\n💰 Prices after discount:");
+console.log("\nPrices after discount:");
 productsList.forEach(p => console.log(p.toString()));
 
 console.log("Part 3 ended");
@@ -109,3 +109,35 @@ let inventory =[
     new PerishableProductProperties("Milk", 1.5, 10, "2024-12-28"),
     new PerishableProductProperties("Cheese", 4.0, 5, "2025-8-14"),
 ];
+
+function saveInventory() {
+    localStorage.setItem("inventory", JSON.stringify(inventory));
+    console.log("Inventory saved to localStorage");
+}
+
+
+function loadInventory() {
+    const data = localStorage.getItem("inventory");
+    if (data) {
+        const parsed = JSON.parse(data);
+       
+        inventory = parsed.map(item => {
+            if (item.expirationDate) {
+                return new PerishableProductProperties(item.name, item.price, item.quantity, item.expirationDate);
+            }
+            return new ProductProperties(item.name, item.price, item.quantity);
+        });
+        console.log("Inventory loaded from localStorage");
+    } else {
+        console.log("Inventory not found in localStorage");
+    }
+}
+
+// Test
+saveInventory();
+inventory = []; 
+loadInventory();
+
+inventory.forEach(item => console.log(item.toString()));
+
+console.log("Part 4 Ended")
