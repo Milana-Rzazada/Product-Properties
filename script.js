@@ -40,3 +40,5 @@ console.log(product7.toString());
 console.log("Total Value: $" + product7.getTotalValue());
 
 console.log("PART 1 ENDED");
+
+console.log("Part 2 Started");
