@@ -72,3 +72,10 @@ console.log("Part2 ended:");
 //Part 3
 console.log("Part 3 Started");
 
+class PerishableProductProperties extends ProductProperties {
+    constructor(name, price, quantity, expirationDate) {
+        super(name, price, quantity);
+        this.expirationDate = expirationDate;
+    
+    }
+}
