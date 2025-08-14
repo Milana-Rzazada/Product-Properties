@@ -165,3 +165,31 @@ function removeProductByName(name) {
         console.log(`Product not found: ${name}`);
     }
 }
+
+
+//update
+function updateProductPrice(name, newPrice) {
+    const product = inventory.find(item => item.name === name);
+    if (product) {
+        product.price = newPrice;
+        saveInventory();
+        console.log(`New price for ${name}: $${newPrice}`);
+    } else {
+        console.log(`Product not found: ${name}`);
+    }
+}
+
+//display all products
+function displayInventory() {
+    console.log("📋 Current Inventory:");
+    inventory.forEach(item => console.log(item.toString()));
+}
+
+addProduct(new ProductProperties("Phone", 800, 5));
+addProduct(new PerishableProductProperties("Yogurt", 2.5, 12, "2025-02-15"));
+
+updateProductPrice("Laptop", 1100);
+removeProductByName("Cheese");
+
+displayInventory();
+
