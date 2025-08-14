@@ -42,3 +42,10 @@ console.log("Total Value: $" + product7.getTotalValue());
 console.log("PART 1 ENDED");
 
 console.log("Part 2 Started");
+
+class PerishableProductProperties extends ProductProperties{
+    constructor(name, price, quantity, expirationDate){
+        super(name, price, quantity, expirationDate);
+        this.expirationDate = expirationDate;
+}
+}
