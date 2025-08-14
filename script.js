@@ -98,3 +98,14 @@ console.log("\n💰 Prices after discount:");
 productsList.forEach(p => console.log(p.toString()));
 
 console.log("Part 3 ended");
+
+
+//PART 4 
+console.log("Part 4 Started");
+
+let inventory =[
+    new ProductProperties("Laptop", 1000, 10),
+    new ProductProperties("Phone", 500, 20),
+    new PerishableProductProperties("Milk", 1.5, 10, "2024-12-28"),
+    new PerishableProductProperties("Cheese", 4.0, 5, "2025-8-14"),
+];
