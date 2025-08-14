@@ -158,7 +158,7 @@ function addProduct(product) {
 function removeProductByName(name) {
     const index = inventory.findIndex(item => item.name === name);
     if (index !== -1) {
-        console.log(`🗑 Removing: ${inventory[index].toString()}`);
+        console.log(`Removing: ${inventory[index].toString()}`);
         inventory.splice(index, 1);
         saveInventory();
     } else {
@@ -181,7 +181,7 @@ function updateProductPrice(name, newPrice) {
 
 //display all products
 function displayInventory() {
-    console.log("📋 Current Inventory:");
+    console.log("Current Inventory:");
     inventory.forEach(item => console.log(item.toString()));
 }
 
