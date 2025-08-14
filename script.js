@@ -41,21 +41,29 @@ console.log("Total Value: $" + product7.getTotalValue());
 
 console.log("PART 1 ENDED");
 
+
+//Part 2
 console.log("Part 2 Started");
 
-class PerishableProductProperties extends ProductProperties{
-    constructor(name, price, quantity, expirationDate){
-        super(name, price, quantity, expirationDate);
-        this.expirationDate = expirationDate;
-}
-toString(){
-    return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
+class PerishableProductProperties extends ProductProperties {
+  
+    constructor(name, price, quantity, expirationDate) {
+        super(name, price, quantity); 
+        this.expirationDate = expirationDate; 
+    }
+
+    toString() {
+        return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
+    }
 }
 
+const milk = new PerishableProductProperties("Milk", 1.5, 10, "2024-12-31");
+const cheese = new PerishableProductProperties("Cheese", 4.0, 5, "2024-11-15");
+const yogurt = new PerishableProductProperties("Yogurt", 2.0, 7, "2024-10-20");
+const eggs = new PerishableProductProperties("Eggs", 1.0, 12, "2024-09-15");
+console.log(milk.toString());
+console.log(cheese.toString());
+console.log(yogurt.toString());
+console.log(eggs.toString());
 
-}
-
-const milk = new PerishableProductProperties("Milk", 2.00, 5, "2025-4-15");
-const cheese = new PerishableProductProperties("Cheese", 3.00, 10, "2025-3-26");
-const eggs = new PerishableProductProperties("Eggs", 1.50, 7, "2024-11-25");
-const yogurt = new PerishableProductProperties("Yogurt", 2.50, 3, "2025-2-20");
+//Part 2 ended
