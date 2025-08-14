@@ -67,3 +67,8 @@ console.log(yogurt.toString());
 console.log(eggs.toString());
 console.log("Part2 ended:");
 //Part 2 ended
+
+
+//Part 3
+console.log("Part 3 Started");
+
